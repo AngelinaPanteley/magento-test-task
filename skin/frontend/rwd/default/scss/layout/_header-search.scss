@@ -66,10 +66,10 @@
     #header-search {
         display: block; // Force visibility
         position: absolute;
-        top: 55px;
-        right: 0;
-        width: 25%;
-        height: 50px;
+        top: 23px;
+        right: 100px;
+        width: 40px;
+        height: 40px;
         padding: 0;
     }
 
@@ -95,6 +95,7 @@
     font-family: $f-stack-special;
     width: 0;
     padding: 0;
+    border: 0;
 }
 
 #search_mini_form .search-button {

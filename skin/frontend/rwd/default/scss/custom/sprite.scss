@@ -1,0 +1,34 @@
+.skip-cart .icon,
+.skip-cart:not(.skip-active):hover .icon {
+    width: 16px; height: 19px;
+    background: url('../images/sprite.png') -108px -49px;
+}
+
+
+.bg-doc {
+    width: 29px; height: 36px;
+    background: url('../images/sprite.png') -10px -65px;
+}
+
+
+.bg-location {
+    width: 30px; height: 35px;
+    background: url('../images/sprite.png') -10px -10px;
+}
+
+
+.bg-rocket {
+    width: 28px; height: 34px;
+    background: url('../images/sprite.png') -60px -10px;
+}
+
+#search_mini_form .search-button:before {
+    width: 19px; height: 21px;
+    background: url('../images/sprite.png') -60px -64px;
+}
+
+.skip-account .icon,
+.skip-account:not(.skip-active):hover .icon {
+    width: 18px; height: 19px;
+    background: url('../images/sprite.png') -108px -10px;
+}

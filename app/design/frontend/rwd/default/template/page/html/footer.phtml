@@ -25,8 +25,94 @@
  */
 ?>
 <div class="footer-container">
-    <div class="footer">
-        <?php echo $this->getChildHtml() ?>
-        <address class="copyright"><?php echo $this->getCopyright() ?></address>
+  <div class="share-container">
+    <div class="subscribe-newsletter">
+      <div class="subscribe-newsletter-inner">
+        <div class="block block-subscribe">
+            <div class="block-title">
+                <strong><span><?php echo $this->__('Newsletter') ?></span></strong>
+            </div>
+            <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+                <div class="block-content">
+                    <div class="form-subscribe-header">
+                        <label for="newsletter" class="subscribe-label"><?php echo $this->__('Promo e navita dal mondo Legami.') ?>
+                        <br/>
+                        <?php echo $this->__('Rivevi subito il 10% disconto sul tuo primo ordino!') ?>
+                        </label>
+                    </div>
+                    <div class="input-box">
+                       <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign up for our newsletter')) ?>" class="input-text required-entry validate-email" placeholder="ENTER YOUR EMAIL ADDRESS"/>
+                       <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="button"><span><span class="icon-right-big"><?php echo $this->__('') ?></span></span></button>
+                    </div>
+                    <div class="checkbox-box">
+                      <input type="checkbox" id="read-policy"/>
+                      <label for="read-policy" class="checkbox-label">I read the privacy policy.</label>
+                    </div>
+                </div>
+            </form>
+            <script type="text/javascript">
+            //<![CDATA[
+                var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+            //]]>
+            </script>
+        </div>
+      </div>
     </div>
+    <div class="share-social">
+      <div class="share-social-inner">
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social_share_block')->toHtml(); ?>
+        <!--<div class="block-title"><strong>Seguici cui social</strong></div>
+        <div class="social-icons">
+          <a href="#"><span class="icon-facebook"></span></a>
+          <a href="#"><span class="icon-twitter"></span></a>
+          <a href="#"><span class="icon-pinterest"></span></a>
+          <a href="#"><span class="icon-instagram"></span></a>
+        </div>-->
+      </div>
+    </div>
+  </div>
+  <div class="contact-block">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_contact_block')->toHtml(); ?>
+    <!--<div class="contact-box">
+      <span class="contact-icon bg-rocket"></span>
+      <div class="contact-links">
+        <a href="">about us</a>
+        <a href="">ethical code</a>
+        <a href="">legami for life</a>
+      </div>
+    </div>
+    <div class="contact-box">
+      <span class="contact-icon bg-doc"></span>
+      <div class="contact-links">
+        <a href="">about us</a>
+        <a href="">ethical code</a>
+        <a href="">legami for life</a>
+      </div>
+    </div>
+    <div class="contact-box">
+      <span class="contact-icon bg-location"></span>
+      <div class="contact-links">
+        <a href="">about us</a>
+        <a href="">ethical code</a>
+        <a href="">legami for life</a>
+      </div>
+    </div>-->
+  </div>
+  <div class="footer">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_bottom_links')->toHtml(); ?>
+    <!--<div class="footer-links">
+      <a href="">Condition duo</a>
+      <a href="">Condition duo</a>
+      <a href="">Condition duo</a>
+      <a href="">Condition duo</a>
+      <a href="">Condition duo</a>
+      <a href="">Condition duo</a>
+      <a href="">Condition duo</a>
+      <a href="">Condition duo</a>
+      <a href="">Condition duo</a>
+      <a href="">Condition duo</a>
+    </div>-->
+    <address class="copyright"><?php echo $this->getCopyright() ?></address>
+  </div>
 </div>
+

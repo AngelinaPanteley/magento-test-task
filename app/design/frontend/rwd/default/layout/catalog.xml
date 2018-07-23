@@ -104,7 +104,9 @@ Category default layout
                     <!-- Since the addColumnCountLayoutDepend does not work, we are manually setting the max columns -->
                     <action method="setColumnCount"><count>4</count></action>
                 </block>
+                <block type="catalog/product_list_related" name="catalog_product_related" as="related" template="catalog/product/list/related.phtml"/>
             </block>
+
         </reference>
     </catalog_category_default>
 
@@ -151,7 +153,9 @@ Category layered navigation layout
                     <!-- Since the addColumnCountLayoutDepend does not work, we are manually setting the max columns -->
                     <action method="setColumnCount"><count>4</count></action>
                 </block>
+                <block type="catalog/product_list_related" name="catalog_product_related" as="related" template="catalog/product/list/related.phtml"/>
             </block>
+
         </reference>
     </catalog_category_layered>
 
@@ -277,6 +281,7 @@ Product view
                 <action method="unsetCallChild"><child>container1</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
                 <action method="unsetCallChild"><child>container2</child><call>ifEquals</call><if>0</if><key>alias_in_layout</key><key>options_container</key></action>
             </block>
+            <block type="catalog/product_list_related" name="catalog.product.related" as="related" template="catalog/product/list/related.phtml"/>
         </reference>
         <reference name="right">
 

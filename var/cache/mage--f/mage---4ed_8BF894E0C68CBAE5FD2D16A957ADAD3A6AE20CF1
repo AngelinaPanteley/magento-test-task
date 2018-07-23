@@ -1,0 +1,24 @@
+<div class="contact-box">
+      <span class="contact-icon bg-rocket"></span>
+      <div class="contact-links">
+        <a href="">about us</a>
+        <a href="">ethical code</a>
+        <a href="">legami for life</a>
+      </div>
+    </div>
+    <div class="contact-box">
+      <span class="contact-icon bg-doc"></span>
+      <div class="contact-links">
+        <a href="">about us</a>
+        <a href="">ethical code</a>
+        <a href="">legami for life</a>
+      </div>
+    </div>
+    <div class="contact-box">
+      <span class="contact-icon bg-location"></span>
+      <div class="contact-links">
+        <a href="">about us</a>
+        <a href="">ethical code</a>
+        <a href="">legami for life</a>
+      </div>
+    </div>

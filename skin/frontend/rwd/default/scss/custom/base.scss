@@ -1,0 +1,28 @@
+.breadcrumbs {
+  a,
+  span {
+    color: #bbbbb9;
+  }
+
+  ul li:last-child * {
+    color: #d3d3d1;
+  }
+
+  .breadcrumbs-back {
+    float: right;
+    text-transform: uppercase;
+  }
+}
+
+.main {
+  max-width: 1410px;
+  margin: 0 auto;
+  padding: 30px;
+
+  &-container {
+    background: #f6f6f6;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}

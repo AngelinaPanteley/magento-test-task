@@ -1,0 +1,183 @@
+.product-collateral {
+  .toggle-tabs {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    border: none;
+
+    li {
+      border: none;
+
+      &>span {
+        font-size: 21px;
+        padding: 0;
+        margin: 0 15px;
+        color: #878682;
+      }
+
+      &:first-child {
+        border: none;
+      }
+
+      &.current {
+        border:none;
+
+        span {
+          color: #423d39;
+          background: none;
+          border-bottom: 1px solid #423d39;
+        }
+      }
+    }
+
+  }
+
+  & > dl > dd {
+    border: none;
+    width: 100%;
+    padding: 0 0 160px;
+    position: relative;
+  }
+}
+
+.tabs {
+  background: none;
+  margin-top: 7px;
+  border-top: 1px solid #cccccc;
+  padding-top: 20px;
+}
+
+.block-related .checkbox {
+  display: none;
+}
+
+.slides {
+  display: flex;
+
+  input {
+    display: none;
+  }
+}
+
+.tab-content .block-related {
+  width: 0;
+}
+
+ol.flex-control-nav.flex-control-paging {
+  display: none;
+}
+
+.flex-viewport {
+  width: calc(100% - 115px);
+  margin: auto;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.mini-products-list {
+  .product-image {
+    float: none;
+    width: 100%;
+    height: 245px;
+    border: none;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      position: absolute;
+    }
+  }
+
+  li {
+    margin-bottom: 10px;
+    //margin-left: 60px;
+
+    &:first-child {
+      margin-left: 60px;
+    }
+  }
+
+  .product-details {
+    margin-left: 0px;
+    text-align: center;
+
+    .product-name {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.price-box {
+  margin-top: 0px;
+  margin-bottom: 4px;
+  color: #48433f;
+}
+
+.price-box .price,
+.price {
+  font-size: 13px;
+  color: #48433f;
+}
+
+.product-view {
+  .add-to-cart-wrapper,
+  .block-related {
+    width: 49%;
+  }
+}
+
+.product-link {
+  text-transform: uppercase;
+  color: #ef1c25;
+}
+
+.flex-nav-prev,
+.flex-nav-next {
+  position: absolute;
+  top: calc(50% - 108px);
+}
+
+.flex-nav-prev {
+  left: 15px;
+}
+
+.flex-nav-next {
+  right: 15px;
+}
+
+.flex-prev,
+.flex-next {
+  color: transparent;
+  width: 0;
+  display: inline-block;
+  @extend .icon-left-open-mini;
+
+  &:hover,
+  &:focus {
+    color: transparent;
+    width: 0;
+    outline: none;
+  }
+
+  &:before {
+    font-family: "legami";
+    color: #3f3c37;
+    font-size: 45px;
+  }
+}
+
+.flex-next {
+  @extend .icon-right-open-mini;
+}
+
+.block.block-related {
+  display: none;
+}

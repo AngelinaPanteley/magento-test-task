@@ -64,10 +64,10 @@
                     <?php echo $this->getTierPriceHtml() ?>
                 </div>
 
-                <!--<div class="extra-info">
-                    <?php //echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
-                    <?php //echo $this->getChildHtml('product_type_availability'); ?>
-                </div>-->
+                <div class="extra-info">
+                    <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
+                    <?php echo $this->getChildHtml('product_type_availability'); ?>
+                </div>
 
                 <?php echo $this->getChildHtml('alert_urls') ?>
 
@@ -80,7 +80,7 @@
 
 
 
-                <!--<?php //echo $this->getChildHtml('other');?>-->
+                <?php echo $this->getChildHtml('other');?>
 
                 <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                     <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
@@ -100,19 +100,19 @@
                                 <span class="or"><?php echo $this->__('OR') ?></span>
                             <?php endif; ?>
                         <?php endif; ?>
-                        <!--<?php //echo $this->getChildHtml('addto') ?>-->
+                        <?php echo $this->getChildHtml('addto') ?>
                         <?php echo $this->getChildHtml('sharing') ?>
                     </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
-                        <!--<?php //echo $this->getChildHtml('addto') ?>-->
+                        <?php echo $this->getChildHtml('addto') ?>
                         <?php echo $this->getChildHtml('sharing') ?>
                     </div>
                 <?php endif; ?>
             </div>
 
-            <!--<?php //echo $this->getChildHtml('related_products') ?>-->
+            <?php echo $this->getChildHtml('related_products') ?>
 
             <div class="clearer"></div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
@@ -172,150 +172,20 @@
         </script>
     </div>
 
-    <div id="personolize-popup" class="personolize-popup">
-      <div class="personolize-popup-inner">
-        <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-        <button class="my_popup_close" id="personolize-close">Close</button>
-        <div class="clearfix">
-          <div class="personolize-popup-image"></div>
-          <form class="personolize-popup-form">
-            <div class="personolize-popup-form-block">
-              <p class="personolize-popup-form-title">Inceriski il testo</p>
-              <p class="personolize-popup-form-label">Max 20 caratteri</p>
-              <input class="personolize-popup-form-input" type="text" name="" />
-              <p class="personolize-popup-form-label--right">11/20</p>
-              <input class="personolize-popup-form-input" type="text" name="" />
-            </div>
-            <div class="personolize-popup-form-block">
-              <p class="personolize-popup-form-title">Scegli il colore: <span class="personolize-popup-form-bold" id="for-radio-color">Rosso</span></p>
-              <div class="personolize-popup-form-radio-container">
-                <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-red" value="Rosso" checked>
-                  <label for="color-red">
-                    <span class="personolize-popup-form-radio-value"></span>
-                    <span class="personolize-popup-form-radio-title">Rosso</span>
-                  </label>
-                </div>
-                <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-blue" value="Blue">
-                  <label for="color-blue">
-                    <span class="personolize-popup-form-radio-value"></span>
-                    <span class="personolize-popup-form-radio-title">Blue</span>
-                  </label>
-                </div>
-                <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-yellow" value="Oro">
-                  <label for="color-yellow">
-                    <span class="personolize-popup-form-radio-value"></span>
-                    <span class="personolize-popup-form-radio-title">Oro</span>
-                  </label>
-                </div>
-                <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-gray" value="Argento">
-                  <label for="color-gray">
-                    <span class="personolize-popup-form-radio-value"></span>
-                    <span class="personolize-popup-form-radio-title">Argento</span>
-                  </label>
-                </div>
-                <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-black" value="Nero">
-                  <label for="color-black">
-                    <span class="personolize-popup-form-radio-value"></span>
-                    <span class="personolize-popup-form-radio-title">Nero</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="personolize-popup-form-block">
-              <p class="personolize-popup-form-title">Scegli font: <span class="personolize-popup-form-bold" id="for-radio-font">Sans</span></p>
-              <div class="personolize-popup-form-radio-container">
-                <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="font" id="font-sans"  value="Sans" checked>
-                  <label for="font-sans">
-                    <span class="personolize-popup-form-radio-value">A</span>
-                    <span class="personolize-popup-form-radio-title">Sans</span>
-                  </label>
-                </div>
-                <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="font" id="font-serif" value="Serif">
-                  <label for="font-serif">
-                    <span class="personolize-popup-form-radio-value">A</span>
-                    <span class="personolize-popup-form-radio-title">Serif</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="personolize-popup-form-block">
-              <p class="personolize-popup-form-price">
-                <?php echo $this->getPriceHtml($_product); ?>
-                <?php echo $this->getChildHtml('bundle_prices') ?>
-                <?php echo $this->getTierPriceHtml() ?>
-              </p>
-              <p class="personolize-popup-form-additional-price">+ $ 5.00 personalizzazione</p>
-            </div>
-            <div class="qty-wrapper">
-              <label for="qty"><?php echo $this->__('Qty') ?></label>
-              <input type="text" pattern="\d*(\.\d+)?" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty" />
-            </div>
-            <input type="submit" class="button" value="Confirma a acciuinci al carrello" />
-          </form>
-        </div>
-        <div class="personolize-popup-footer">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaec, su.
-        </div>
-      </div>
-    </div>
 
     <div class="product-collateral toggle-content tabs">
-        <dl id="collateral-tabs" class="collateral-tabs">
-            <dt class="tab"><span>Wear with</span></dt>
-            <dd class="tab-container">
-                <div class="tab-content flexslider">
-                  <?php echo $this->getChildHtml('related_products') ?>
-                </div>
-            </dd>
-            <dt class="tab"><span>You may also like</span></dt>
-            <dd class="tab-container">
-                <div class="tab-content">
-                  <!--<?php //echo $this->getChildHtml('related_products') ?>-->
-                </div>
-            </dd>
-        </dl>
+        <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
+          <dl id="collateral-tabs" class="collateral-tabs">
+            <?php foreach ($detailedInfoGroup as $alias => $html):?>
+              <dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
+              <dd class="tab-container">
+                <div class="tab-content"><?php echo $html ?></div>
+              </dd>
+              <?php endforeach;?>
+            </dl>
+          <?php endif; ?>
     </div>
 
-    <?php  $baseJsUrl = Mage::getBaseUrl('js'); ?>
-    <script type="text/javascript" src="<?php echo $baseJsUrl ?>flexslider/jquery.js"></script>
-    <script type="text/javascript" src="<?php echo $baseJsUrl ?>flexslider/jquery.flexslider.js"></script>
-    <script type="text/javascript">
-        $(window).on('load', function() {
-          $('.flexslider').flexslider({
-            animation: "slide",
-            animationLoop: false,
-            itemWidth: 190,
-            itemMargin: 120
-          });
-        });
-    </script>
-    <script type="text/javascript">
-      $(window).on('load', function() {
-        $('#personolize-btn').click(function() {
-          $('#personolize-popup').addClass('show');
-          $('#personolize-close').click(function() {
-            $('#personolize-popup').removeClass('show');
-          });
-        });
-
-        $('input:radio[name="color"]').change(function(){
-          const value = $(this).val();
-          $('#for-radio-color').html(value);
-        });
-        $('input:radio[name="font"]').change(function(){
-          const value = $(this).val();
-          $('#for-radio-font').html(value);
-        });
-      });
-    </script>
-
-    <!--<?php //echo $this->getChildHtml('upsell_products') ?>
-    <?php //echo $this->getChildHtml('product_additional_data') ?>-->
+    <?php echo $this->getChildHtml('upsell_products') ?>
+    <?php echo $this->getChildHtml('product_additional_data') ?>
 </div>

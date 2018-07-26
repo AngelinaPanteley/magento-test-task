@@ -11484,10 +11484,10 @@ ol.flex-control-nav.flex-control-paging {
   border: 1px solid black;
 }
 .personolize-popup-form-radio-box input#font-sans + label .personolize-popup-form-radio-value {
-  font-family: sans-serif;
+  font-family: sans;
 }
 .personolize-popup-form-radio-box input#font-serif + label .personolize-popup-form-radio-value {
-  font-family: sans;
+  font-family: sans-serif;
 }
 .personolize-popup-form-radio-value {
   display: inline-block;
@@ -11554,6 +11554,17 @@ ol.flex-control-nav.flex-control-paging {
   background-position: center;
   margin-top: 28px;
   margin-left: 20px;
+  position: relative;
+}
+.personolize-popup-text {
+  position: absolute;
+  bottom: 81px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
 }
 .personolize-popup .clearfix {
   display: flex;

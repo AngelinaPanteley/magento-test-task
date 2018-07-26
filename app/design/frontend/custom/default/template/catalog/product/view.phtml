@@ -177,48 +177,53 @@
         <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
         <button class="my_popup_close" id="personolize-close">Close</button>
         <div class="clearfix">
-          <div class="personolize-popup-image"></div>
+          <div class="personolize-popup-image">
+            <div class="personolize-popup-text" id="personolize-text" style="color: rgb(255, 30, 0); font-family: sans;">
+              <p class="personolize-popup-text-first-line" id="first-line"></p>
+              <p class="personolize-popup-text-second-line" id="second-line"></p>
+            </div>
+          </div>
           <form class="personolize-popup-form">
             <div class="personolize-popup-form-block">
               <p class="personolize-popup-form-title">Inceriski il testo</p>
               <p class="personolize-popup-form-label">Max 20 caratteri</p>
-              <input class="personolize-popup-form-input" type="text" name="" />
-              <p class="personolize-popup-form-label--right">11/20</p>
-              <input class="personolize-popup-form-input" type="text" name="" />
+              <input class="personolize-popup-form-input" type="text" name="" id="first-line-input"/>
+              <p class="personolize-popup-form-label--right"><span id="counter">0</span>/20</p>
+              <input class="personolize-popup-form-input" type="text" name="" id="second-line-input"/>
             </div>
             <div class="personolize-popup-form-block">
               <p class="personolize-popup-form-title">Scegli il colore: <span class="personolize-popup-form-bold" id="for-radio-color">Rosso</span></p>
               <div class="personolize-popup-form-radio-container">
                 <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-red" value="Rosso" checked>
+                  <input type="radio" name="color" id="color-red" value="Rosso" checked data-color='#ff1e00'>
                   <label for="color-red">
                     <span class="personolize-popup-form-radio-value"></span>
                     <span class="personolize-popup-form-radio-title">Rosso</span>
                   </label>
                 </div>
                 <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-blue" value="Blue">
+                  <input type="radio" name="color" id="color-blue" value="Blue" data-color='#0069b3'>
                   <label for="color-blue">
                     <span class="personolize-popup-form-radio-value"></span>
                     <span class="personolize-popup-form-radio-title">Blue</span>
                   </label>
                 </div>
                 <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-yellow" value="Oro">
+                  <input type="radio" name="color" id="color-yellow" value="Oro" data-color='#db9000'>
                   <label for="color-yellow">
                     <span class="personolize-popup-form-radio-value"></span>
                     <span class="personolize-popup-form-radio-title">Oro</span>
                   </label>
                 </div>
                 <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-gray" value="Argento">
+                  <input type="radio" name="color" id="color-gray" value="Argento" data-color='gray'>
                   <label for="color-gray">
                     <span class="personolize-popup-form-radio-value"></span>
                     <span class="personolize-popup-form-radio-title">Argento</span>
                   </label>
                 </div>
                 <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="color" id="color-black" value="Nero">
+                  <input type="radio" name="color" id="color-black" value="Nero" data-color='#000'>
                   <label for="color-black">
                     <span class="personolize-popup-form-radio-value"></span>
                     <span class="personolize-popup-form-radio-title">Nero</span>
@@ -230,14 +235,14 @@
               <p class="personolize-popup-form-title">Scegli font: <span class="personolize-popup-form-bold" id="for-radio-font">Sans</span></p>
               <div class="personolize-popup-form-radio-container">
                 <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="font" id="font-sans"  value="Sans" checked>
+                  <input type="radio" name="font" id="font-sans"  value="Sans" checked data-font="sans">
                   <label for="font-sans">
                     <span class="personolize-popup-form-radio-value">A</span>
                     <span class="personolize-popup-form-radio-title">Sans</span>
                   </label>
                 </div>
                 <div class="personolize-popup-form-radio-box">
-                  <input type="radio" name="font" id="font-serif" value="Serif">
+                  <input type="radio" name="font" id="font-serif" value="Serif" data-font="sans-serif">
                   <label for="font-serif">
                     <span class="personolize-popup-form-radio-value">A</span>
                     <span class="personolize-popup-form-radio-title">Serif</span>
@@ -277,45 +282,8 @@
             <dt class="tab"><span>You may also like</span></dt>
             <dd class="tab-container">
                 <div class="tab-content">
-                  <!--<?php //echo $this->getChildHtml('related_products') ?>-->
                 </div>
             </dd>
         </dl>
     </div>
-
-    <?php  $baseJsUrl = Mage::getBaseUrl('js'); ?>
-    <script type="text/javascript" src="<?php echo $baseJsUrl ?>flexslider/jquery.js"></script>
-    <script type="text/javascript" src="<?php echo $baseJsUrl ?>flexslider/jquery.flexslider.js"></script>
-    <script type="text/javascript">
-        $(window).on('load', function() {
-          $('.flexslider').flexslider({
-            animation: "slide",
-            animationLoop: false,
-            itemWidth: 190,
-            itemMargin: 120
-          });
-        });
-    </script>
-    <script type="text/javascript">
-      $(window).on('load', function() {
-        $('#personolize-btn').click(function() {
-          $('#personolize-popup').addClass('show');
-          $('#personolize-close').click(function() {
-            $('#personolize-popup').removeClass('show');
-          });
-        });
-
-        $('input:radio[name="color"]').change(function(){
-          const value = $(this).val();
-          $('#for-radio-color').html(value);
-        });
-        $('input:radio[name="font"]').change(function(){
-          const value = $(this).val();
-          $('#for-radio-font').html(value);
-        });
-      });
-    </script>
-
-    <!--<?php //echo $this->getChildHtml('upsell_products') ?>
-    <?php //echo $this->getChildHtml('product_additional_data') ?>-->
 </div>

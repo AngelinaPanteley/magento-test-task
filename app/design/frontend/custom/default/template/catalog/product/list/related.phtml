@@ -24,7 +24,9 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<?php //if($this->getItems()->getSize()): ?>
+
+
+<?php if($this->getItems()->getSize()): ?>
 <div class="block block-related">
     <div class="block-content">
         <ol class="mini-products-list slides" id="block-related">
@@ -48,6 +50,7 @@
         </ol>
         <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
     </div>
+
     <script type="text/javascript">
     //<![CDATA[
     $$('.related-checkbox').each(function(elem){
@@ -84,5 +87,7 @@
     }
     //]]>
     </script>
+
+
 </div>
-<?php //endif ?>
+<?php endif ?>

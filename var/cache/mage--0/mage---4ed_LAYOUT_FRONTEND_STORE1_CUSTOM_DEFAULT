@@ -788,6 +788,15 @@
    </reference>
    <reference name="head">
       <action method="addJs">
+         <script>flexslider/jquery.flexslider.js</script>
+      </action>
+      <action method="addJs">
+         <script>flexslider/product_flexslider.js</script>
+      </action>
+      <action method="addJs">
+         <script>popup/index.js</script>
+      </action>
+      <action method="addJs">
          <script>varien/product.js</script>
       </action>
       <action method="addJs">
@@ -948,7 +957,6 @@
             <key>options_container</key>
          </action>
       </block>
-      <block type="catalog/product_list_related" name="catalog.product.related" as="related" template="catalog/product/list/related.phtml"/>
    </reference>
    <reference name="right">
 
